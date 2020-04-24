@@ -1070,6 +1070,14 @@ class SemanticMapper:SyntaxVisitor {
     }
     
     override func visit(_ token: TokenSyntax) -> SyntaxVisitorContinueKind {
+        let keywordsInOntology = ["break", "case", "catch", "continue", "convenience", "defer", "deinit", "do", "enum", "fallthrough", "fileprivate", "final", "func", "import", "init", "inout", "internal", "is", "let", "mutating", "nil", "override", "print", "private", "public", "required", "return", "self", "some", "super", "throw", "throws", "try", "unowned", "var", "weak", "where"]
+
+        if token.tokenClassification.kind == SwiftSyntax.SyntaxClassification.keyword && keywordsInOntology.contains(token.text) {
+            self.concepts += ["swift:\(token.text)"]
+        } else if let parent = token.parent {
+            self.walk(parent)
+        }
+
         return .skipChildren
     }
     

@@ -19,7 +19,7 @@ sudo cp -i .build/release/swift-semantic /Applications/Xcode.app/Contents/Develo
 
 You can now use the utility in the following way:
 
-```
+```bash
 $ swift semantic <path/to/file.swift> <startLine> <startColumn> <endLine> <endColumn>
 ```
 
