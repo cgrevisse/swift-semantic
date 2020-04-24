@@ -431,6 +431,7 @@ class SemanticMapper:SyntaxVisitor {
     }
     
     override func visit(_ node: TypeInheritanceClauseSyntax) -> SyntaxVisitorContinueKind {
+        self.concepts += ["swift:Inheritance"]
         return .skipChildren
     }
     
