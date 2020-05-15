@@ -1,12 +1,14 @@
 # Swift Semantic
 
-This Swift console application permits to retrieve, for a selection in a Swift source file, the main concept from the Swift scheme of the ALMA ontology. It uses [SwiftSyntax](https://github.com/apple/swift-syntax) in its version `0.50200.0` (for Swift 5.2).
+This Swift utility permits to retrieve, for a selection in a Swift source file, the main concept from the [Swift Vocabulary](http://purl.org/lu/uni/alma/swift). It uses [SwiftSyntax](https://github.com/apple/swift-syntax) in its version `0.50200.0` (for Swift 5.2).
+
+Caveat: This is a proof of concept, which, while covering a lot of syntactical elements of the Swift programming language, does not yet cover all concepts from the Swift Vocabulary!
 
 ## Download & Installation
 
 ```bash
-git clone https://ds-git.fstc.uni.lu/christian.grevisse/swift-semantic.git
-cd swift-ast
+git clone https://github.com/cgrevisse/swift-semantic.git
+cd swift-semantic
 
 # Build a release binary
 swift build -c release
@@ -14,6 +16,8 @@ swift build -c release
 # Copy into your Swift toolchain (here: Xcode)
 sudo cp -i .build/release/swift-semantic /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
 ```
+
+For a custom installation of the Swift toolchain on macOS or on Linux, you can determine its path using `dirname $(which swift)`.
 
 ## Usage
 
